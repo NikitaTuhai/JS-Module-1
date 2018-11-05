@@ -4,26 +4,24 @@ const adminLogin = "admin";
 const adminPassword = "mango";
 
 const login = prompt("Введите ваш логин:");
-const validLogin = login === adminLogin;
 
-const invalidInput = "Доступ запрещен!"
-const cancel = "Отменено пользователем!"
-const welcome = "Добро пожаловать!"
+const invalidInput = "Доступ запрещен!";
+const cancel = "Отменено пользователем!";
+const welcome = "Добро пожаловать!";
 
-if (!login) {
-  alert(cancel);
-} else if (!validLogin) {
-  alert(invalidInput);
-}
-
-if (validLogin) {
+if (login === adminLogin) {
   const password = prompt("Введите ваш пароль:");
-  const validPassword = password === adminPassword;
 
-  if (validPassword) {
+  if (password === adminPassword) {
     alert(welcome);
+  }else if(password === null)
+  alert(cancel);
+  else {
+    alert(invalidInput);
   }
-  if (!password) {
-    alert(cancel);
-  } else if (!validPassword) alert(invalidInput);
+}else if(login === null){
+  alert(cancel)
+}
+else{
+  alert(invalidInput);
 }
